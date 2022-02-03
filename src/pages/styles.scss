@@ -1,0 +1,9 @@
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .carousel .thumbs-wrapper {
+    display: none;
+  }
+}

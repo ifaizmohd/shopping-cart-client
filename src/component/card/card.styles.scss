@@ -1,0 +1,111 @@
+$phones: 480px;
+$tablets: 768px;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px dotted gray;
+  box-shadow: 0 0 1px gray;
+  padding: 1em;
+  flex: 0 1 calc(25% - 1em);
+  min-height: 360px;
+
+  h2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 3em;
+    min-height: 3em;
+    margin: 0;
+  }
+
+  .tablet .custom-button {
+    display: none;
+  }
+
+  .image {
+    padding: 1em;
+    width: 100%;
+    height: auto;
+    flex: 1 1;
+  }
+
+  .description {
+    background-color: rgb(224, 223, 223);
+    padding: 0.5em;
+    overflow: hidden;
+    flex: 1 1;
+    height: 3em;
+  }
+
+  .group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 1;
+  }
+}
+
+@media screen and (max-width: $phones) {
+  .card {
+    display: flex;
+    padding: 0.5em;
+    flex-flow: column wrap;
+    flex: 0 1 100%;
+    min-height: 0;
+
+    h2 {
+      font-size: 1em;
+      padding: 0;
+      margin: 1em;
+    }
+
+    .card-content {
+      display: flex;
+
+      .image {
+        width: 40%;
+        height: auto;
+        flex: 1 1;
+      }
+
+      .card-details {
+        flex: 2 1;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $phones) and (max-width: $tablets) {
+  .card {
+    flex: 1 1 calc(50% - 1em);
+    min-height: 200px;
+    max-width: calc(50% - 1em);
+
+    h2 {
+      font-size: 1em;
+    }
+
+    .tablet .custom-button {
+      display: flex;
+    }
+
+    .card-content {
+      display: flex;
+
+      .image {
+        width: calc(50% - 1em);
+        padding: 0;
+      }
+
+      .description {
+        height: 6em;
+      }
+
+      .custom-button {
+        display: none;
+      }
+    }
+  }
+}
