@@ -1,5 +1,4 @@
-$phones: 480px;
-$tablets: 768px;
+@import "../../assets/stylesheets/variables";
 
 .banner {
   width: 100%;
@@ -7,15 +6,22 @@ $tablets: 768px;
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  max-height: 360px;
+  max-height: calc(100% / 5);
+  border-bottom: 1px solid $navigation-border-color;
+  gap: 25%;
+
+  .banner-image {
+    display: flex;
+    flex-flow: row wrap;
+    width: calc(100% / 5);
+  }
 
   .image {
-    width: calc(40% - 1em);
+    width: 100%;
   }
 
   .categories-container {
-    flex: 3 1;
-    max-width: calc(50%);
+    flex: 2 1;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -27,8 +33,25 @@ $tablets: 768px;
 }
 
 @media screen and (max-width: $phones) {
+  .banner {
+    gap: 0;
+  }
+  .banner-image {
+    width: calc(100% / 2) !important;
+  }
   .image {
-    width: calc(50% - 1em);
-    flex: 1 1;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: $phones) and (max-width: $tablets) {
+  .banner {
+    gap: 12%;
+  }
+  .banner-image {
+    width: calc(100% / 3) !important;
+  }
+  .image {
+    width: 100%;
   }
 }

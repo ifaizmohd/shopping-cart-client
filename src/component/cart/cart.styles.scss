@@ -2,17 +2,26 @@ $phones: 480px;
 $tablets: 768px;
 
 .cart-body {
-  display: flex;
   width: 100%;
-  flex-flow: column wrap;
-  gap: 0.5em;
-  overflow-y: auto;
-  overflow-x: hidden;
+
+  .scrollable {
+    display: flex;
+    overflow-y: auto;
+    gap: 0.1em;
+    flex-flow: column wrap;
+  }
 
   .cart-items {
     display: flex;
     width: 100%;
     background-color: white;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5em;
+  }
+  .cart-image-container {
+    display: flex;
+    flex: 1;
   }
   .cart-item-image {
     flex: 1 1;
@@ -22,7 +31,6 @@ $tablets: 768px;
     flex: 3 1;
     display: flex;
     flex-flow: column wrap;
-    gap: 1em;
   }
   .group-details {
     display: flex;
@@ -137,8 +145,6 @@ $tablets: 768px;
     border: none;
     display: flex;
     flex-flow: column;
-    overflow-y: auto;
-    overflow-x: hidden;
 
     &.show {
       transform: translateX(0);

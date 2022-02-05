@@ -1,29 +1,32 @@
-$phones: 480px;
-$tablets: 768px;
+@import "../../assets/stylesheets/variables";
 
 .center-container {
   display: flex;
-  flex: 4 1;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 10px 10px;
+  position: absolute;
+  width: 75%;
+  right: 0;
+}
 
-  @media screen and (max-width: $phones) {
-    .center-container {
-      flex: 1 1;
-      flex-wrap: wrap;
-    }
+@media screen and (max-width: $phones) {
+  .center-container {
+    flex: 1 1;
+    flex-wrap: wrap;
+    width: 100% !important;
+    z-index: 0;
   }
+}
 
-  @media screen and (max-width: $tablets) {
-    .center-container {
-      display: flex;
-      flex: 4 1;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 10px 10px;
-    }
+@media screen and (max-width: $tablets) {
+  .center-container {
+    display: flex;
+    flex: 4 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px 10px;
   }
 }

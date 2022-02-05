@@ -1,5 +1,4 @@
-$phones: 480px;
-$tablets: 768px;
+@import "../../assets/stylesheets/variables";
 
 .custom-button {
   // min-width: 165px;
@@ -9,7 +8,7 @@ $tablets: 768px;
   line-height: 50px;
   padding: 0 0.5em 0 0.5em;
   font-size: 12px;
-  background-color: #d00256;
+  background-color: $primary-color;
   color: white;
   text-transform: uppercase;
   font-weight: bolder;
@@ -19,7 +18,7 @@ $tablets: 768px;
   justify-content: center;
 
   &:hover {
-    background-color: #ac0045;
+    background-color: $primary-color-hover;
     color: white;
   }
 
@@ -79,9 +78,6 @@ $tablets: 768px;
     line-height: 40px;
     padding: 0 0.5em 0 0.5em;
     font-size: 12px;
-    background-color: #d00256;
-    color: white;
-    text-transform: uppercase;
     font-weight: bolder;
     border: none;
     cursor: pointer;

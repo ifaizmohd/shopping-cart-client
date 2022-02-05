@@ -30,11 +30,13 @@ const HomePage: FunctionComponent<any> = () => {
           </div>
         ))}
       </Carousel>
-      {category.categories
-        .filter((cat: CategoryModel) => cat.order > 0)
-        .map((cate: CategoryModel) => (
-          <Banner key={cate.id} category={cate} />
-        ))}
+      <div className="categories">
+        {category.categories
+          .filter((cat: CategoryModel) => cat.order > 0)
+          .map((cate: CategoryModel) => (
+            <Banner key={cate.id} category={cate} />
+          ))}
+      </div>
     </div>
   );
 };

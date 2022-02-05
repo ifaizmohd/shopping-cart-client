@@ -1,12 +1,12 @@
 import React, { FunctionComponent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./navigation.styles.scss";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import { ReactComponent as CartIcon } from "../../assets/cart.svg";
 import { useDispatch, useSelector } from "react-redux";
 import IStoreState from "../../types/store.types";
 import { toggleCart } from "../../redux/cart/cart.action";
 import { toggleCategories } from "../../redux/category/category.action";
+import "./navigation.styles.scss";
 
 const Navigation: FunctionComponent<any> = () => {
   const [toggle, setToggle] = useState(false);
@@ -23,6 +23,7 @@ const Navigation: FunctionComponent<any> = () => {
   return (
     <section className="navigation-container bebas-font">
       <ArrowRightCircle
+        style={{ color: "#d00256" }}
         className={`sidebar-toggle ${
           category.toggleCategories ? "left" : "right"
         }`}
@@ -35,7 +36,13 @@ const Navigation: FunctionComponent<any> = () => {
         onClick={() => {
           navigate("/");
         }}
-      ></header>
+      >
+        <img
+          src={require("../../assets/logo.png")}
+          alt={`logo`}
+          srcSet={require("../../assets/logo_2x.png")}
+        />
+      </header>
       <nav className="nav-bar">
         <ul className="nav-links">
           <li>

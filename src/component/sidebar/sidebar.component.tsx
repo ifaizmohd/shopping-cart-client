@@ -21,6 +21,7 @@ const Sidebar: FunctionComponent<ISidebarProps> = ({ setFilterValue }) => {
     <aside className={`sidebar ${category.toggleCategories ? "show" : ""}`}>
       {category.categories
         .filter((item: CategoryModel) => item.order > 0)
+        .sort((a: CategoryModel, b: CategoryModel) => a.order - b.order)
         .map((cat: CategoryModel) => (
           <section
             key={cat.id}

@@ -3,7 +3,7 @@ $tablets: 768px;
 
 .modal {
   position: fixed;
-  z-index: 101;
+  z-index: 10;
   bottom: 0;
   right: 0;
   width: 100%;
@@ -95,6 +95,9 @@ $tablets: 768px;
 @media screen and (max-width: $phones) {
   .modal {
     display: none;
+  }
+  .modal-content {
+    z-index: 2;
   }
 }
 

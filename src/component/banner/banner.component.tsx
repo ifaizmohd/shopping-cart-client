@@ -12,11 +12,13 @@ const Banner: FunctionComponent<IBannerProps> = ({ category }) => {
 
   return (
     <section className="banner">
-      <img
-        className="image"
-        src={require(`../../assets${category.imageUrl}`)}
-        alt={category.key}
-      />
+      <div className="banner-image">
+        <img
+          className="image"
+          src={require(`../../assets${category.imageUrl}`)}
+          alt={category.key}
+        />
+      </div>
       <article className="categories-container">
         <h3>{category.name}</h3>
         <p>{category.description}</p>

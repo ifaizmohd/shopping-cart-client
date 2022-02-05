@@ -21,6 +21,7 @@ const CartMobile: FunctionComponent<any> = ({ show }) => {
     );
     setTotal(totalAmount);
   }, [cart]);
+
   return (
     <article className={`modal-content ${show ? "show" : "hide"}`}>
       <header className="modal-header">
